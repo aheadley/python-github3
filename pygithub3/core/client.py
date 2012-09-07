@@ -86,7 +86,7 @@ class Client(object):
 
     def post(self, request, **kwargs):
         response = self.request('post', request, **kwargs)
-        assert response.status_code == 201
+        assert response.status_code in (201, 202)
         return response
 
     def patch(self, request, **kwargs):
